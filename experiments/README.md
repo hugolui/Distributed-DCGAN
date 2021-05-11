@@ -26,6 +26,8 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io
 
 git clone https://github.com/eborin/Distributed-DCGAN.git
 
+cd Distributed-DCGAN
+
 mkdir cifar10 && cd cifar10
 wget --no-check-certificate https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 tar -xvf cifar-10-python.tar.gz
