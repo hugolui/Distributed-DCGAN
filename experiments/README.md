@@ -52,4 +52,4 @@ sudo docker build -t dist_dcgan .
   sudo docker run --env OMP_NUM_THREADS=2 --rm --network=host -p 1234:1234  -v=$(pwd):/root dist_dcgan:latest python -m torch.distributed.launch --nproc_per_node=2 --nnodes=4 --node_rank=2 --master_addr="172.31.71.56" --master_port=1234 dist_dcgan.py --dataset cifar10 --dataroot ./cifar10  --num_epochs 1 --batch_size 16
   
   Terminal 4:
-  sudo docker run --env OMP_NUM_THREADS=1 --rm --network=host -p 1234:1234  -v=$(pwd):/root dist_dcgan:latest python -m torch.distributed.launch --nproc_per_node=2 --nnodes=4 --node_rank=3 --master_addr="172.31.71.56" --master_port=1234 dist_dcgan.py --dataset cifar10 --dataroot ./cifar10  --num_epochs 1 --batch_size 16
+  sudo docker run --env OMP_NUM_THREADS=2 --rm --network=host -p 1234:1234  -v=$(pwd):/root dist_dcgan:latest python -m torch.distributed.launch --nproc_per_node=2 --nnodes=4 --node_rank=3 --master_addr="172.31.71.56" --master_port=1234 dist_dcgan.py --dataset cifar10 --dataroot ./cifar10  --num_epochs 1 --batch_size 16
