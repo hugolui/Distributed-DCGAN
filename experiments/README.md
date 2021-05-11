@@ -5,32 +5,33 @@ Para realizar a executação da DCGAN no Amazon web service elastic computing 2 
 3) Definiu-se um storage com 16 GB do tipo "General Purpose SSD (gp2)"
 4) Configurou-se as regras de acesso a máquinas virtual da seguinte forma, Type: SSH; Protocol: TCP; Port range: 22; Source: anywhere. Desse modo, o usuário possui acesso as máquinas virtuais via SSH.
 5) Depois de criado a imagem, connectou-se a máquina virtual via SSH e executou-se os seguintes commandos:
-  sudo apt-get update
-  sudo apt-get install \
-      apt-transport-https \
-      ca-certificates \
-      curl \
-      gnupg \
-      lsb-release
+  
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
 
-  curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
-  echo \
-    "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-  sudo apt-get update
+sudo apt-get update
 
-  sudo apt-get install docker-ce docker-ce-cli containerd.io
+sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-  git clone https://github.com/eborin/Distributed-DCGAN.git
+git clone https://github.com/eborin/Distributed-DCGAN.git
 
-  mkdir cifar10 && cd cifar10
-  wget --no-check-certificate https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
-  tar -xvf cifar-10-python.tar.gz
-  cd ..
+mkdir cifar10 && cd cifar10
+wget --no-check-certificate https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
+tar -xvf cifar-10-python.tar.gz
+cd ..
 
-  sudo docker build -t dist_dcgan .
+sudo docker build -t dist_dcgan .
   
 6) Uma vez tudo configurado, criou-se uma imagem base a partir da máquina virtual obtida pelos passos anteriores.
 7) Executou-se os passos 1 a 4 novamente ("Launch instance"), no entanto no passo 1, escolheremos a image base recém criada e no passo 2, utilizaremos 4 instâncias ao invés de uma, além disso, adicionaremos um "placement group" para obter um melhor desempenho de rede.
