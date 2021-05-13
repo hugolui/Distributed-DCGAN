@@ -273,7 +273,7 @@ def main():
         print(f"Rank: {rank}, Epoch: {epoch}, Epoch time: {epoch_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s")
         file.write(f"Rank: {rank}, Epoch: {epoch}, Epoch time: {epoch_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s")
         
-
+    file.close()
     torch.distributed.destroy_process_group()
 
 if __name__ == "__main__":
