@@ -5,6 +5,7 @@
 Escolheu-se a imagem "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type" como mostrado na figura abaixo.
 
 ![Figura 1](./screenshots/imagem.png)
+Figura 1. Imagem utilizada nos experimentos.
 
 ## 2) Escolhendo o tipo da instância
 
