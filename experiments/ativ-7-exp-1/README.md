@@ -9,7 +9,7 @@ Figura 1. Imagem utilizada nos experimentos.
 
 ## 2) Escolhendo o tipo da instância
 
-No experimento foram usadas as intâncias: "c5.large", "m5.large", "m4.large", "m4.xlarge", "t2.large"
+No experimento foram usadas as intâncias: "c5.large", "m5.large", "m4.large", "t2.large"
 
 ## 3) Configurar detalhes da instância
 
@@ -70,7 +70,7 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 
 # Resultados
 
-Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.large", "m5.large", "m4.large", "m4.xlarge", "t2.large". Onde, suas configurações são apresentadas na imagem abaixo. 
+Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.large", "m5.large", "m4.large", "t2.large". Onde, suas configurações são apresentadas na imagem abaixo. 
 
 ![Figura 8](./screenshots/maquinas_virtuais.png)
 Figura 8. Detalhes das máquinas virtuais utilizadas nos experimentos.
@@ -90,9 +90,12 @@ Figura 12. Custo de uma máquina para realização de dez iterações.
 O custo de uma máquina virtual para diferentes cenários é apresentado nas Figs. 9 a 12, onde para cada máquina, realizou-se o experimento por uma época, uma iteração, duas iterações e dez iterações. Apesar de a máquina "c5.large" executar a aplicação em um menor tempo em comparação com as outras máquinas, observa-se, que em todos os cenários, a máquina "m5.large" tem o melhor custo-benefício. Além disso, nota-se que a ordem custo-benefício das máquinas é a mesma para todos os cenários. A partir dos resultados e das configurações das máquinas virtuais, pode-se inferir que a aplicação tem melhor performance com máquinas virtuais que oferecem maior velocidade de clock da CPU e performance de rede. Portanto, para obter o melhor custo-benefício, procura-se máquinas virtuais com tais características a um menor preço.
 
 Tabela 1. Erro relativo para cálculo do custo de execução de uma época
-|a  | Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
+|Máquina virtual | Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
 |:---:  | :---:   | :-: | :-: |
-| a | 301 | 301 | 283 |
+| m5.large | 301 | 301 | 283 |
+| c5.large | 301 | 301 | 283 |
+| m4.large | 301 | 301 | 283 |
+| t2.large | 301 | 301 | 283 |
 
 Desse modo, na etapa de seleção e comparação de custo das máquinas, a aplicação poderia
 
