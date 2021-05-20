@@ -1,5 +1,7 @@
 # Passos necessários para execução do experimento
 
+O objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. 
+
 ## 1) Escolhendo a imagem da máquina
 
 Escolheu-se a imagem "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type" como mostrado na figura abaixo.
@@ -13,7 +15,7 @@ No experimento foram usadas as intâncias: "c5.xlarge", "m5.large", "m4.large", 
 
 ## 3) Configurar detalhes da instância
 
-Todas as instâncias foram configuradas de acordo com as imagens abaixo, onde-se utilizou 4 instâncias em cada experimento. A opção "add instance to placement group" foi selecionada para tirar proveito de uma rede como melhor desempenho. Para instalar os pacotes necessários nas máquina para realização dos experimentos, na opção "User Data", foi adicionado o seguinte texto:
+Todas as instâncias foram configuradas de acordo com as imagens abaixo, onde-se utilizou 4 instâncias em cada experimento. O motivo para essa escolha, leva em consideração o estudo de escalabilidade realizado com a aplicação. A opção "add instance to placement group" foi selecionada para tirar proveito de uma rede como melhor desempenho. Para instalar os pacotes necessários nas máquina para realização dos experimentos, na opção "User Data", foi adicionado o seguinte texto:
 
 ```
 #!/bin/bash
@@ -69,8 +71,6 @@ sudo docker run --env OMP_NUM_THREADS=1 --rm --network=host -p 1234:1234 -v=$(pw
 Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o master tem rank igual a zero. No parâmetro "--master_add" deve ser inserido o "Private IPv4 addresses" do master.
 
 # Resultados
-
-Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.xlarge", "m5.large", "m4.large", "t2.large". Onde, suas configurações são apresentadas na imagem abaixo. 
 
 ![Figura 8](./screenshots/tipos_de_instancias.png)
 Figura 8. Detalhes das máquinas virtuais utilizadas nos experimentos.
