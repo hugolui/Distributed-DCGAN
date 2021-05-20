@@ -63,3 +63,4 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional.
 
 ![Figura 8](./results/cost_epoch.png)
+Figura 8. CASSSA
