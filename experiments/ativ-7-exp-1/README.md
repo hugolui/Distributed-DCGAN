@@ -2,7 +2,8 @@
 
 ## 1) Escolhendo a imagem da máquina
 
-![Screenshot](./screenshots/imagem.png)
+![Alt text](./screenshots/imagem.png)
+
 
 
 ## 2) Escolhendo o tipo da instância
