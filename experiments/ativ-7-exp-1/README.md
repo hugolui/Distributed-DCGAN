@@ -70,16 +70,19 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 
 # Resultados
 
-Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional.
+Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.large", "m5.large", "m4.large", "m4.xlarge", "t2.large". Onde, as configurações das máquinas são apresentadas na imagem abaixo.
 
-![Figura 8](./results/cost_epoch.png)
-Figura 8. Custo de uma máquina para realização de uma "epoch".
+![Figura 8](./screeshots/maquinas_virtuais.png)
+Figura 8. Detalhes das máquinas virtuais utilizadas nos experimentos.
 
-![Figura 9](./results/cost_1teration.png)
-Figura 9. Custo de uma máquina para realização de uma iteração.
+![Figura 9](./results/cost_epoch.png)
+Figura 9. Custo de uma máquina para realização de uma "epoch".
 
-![Figura 10](./results/cost_2teration.png)
-Figura 10. Custo de uma máquina para realização de duas iterações.
+![Figura 10](./results/cost_1teration.png)
+Figura 10. Custo de uma máquina para realização de uma iteração.
 
-![Figura 11](./results/cost_2to11teration.png)
-Figura 10. Custo de uma máquina para realização de dez iterações.
+![Figura 11](./results/cost_2teration.png)
+Figura 11. Custo de uma máquina para realização de duas iterações.
+
+![Figura 12](./results/cost_2to11teration.png)
+Figura 12. Custo de uma máquina para realização de dez iterações.
