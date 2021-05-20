@@ -38,7 +38,7 @@ sudo docker build -t dist_dcgan .
 6) Uma vez tudo configurado, criou-se uma imagem base a partir da máquina virtual obtida pelos passos anteriores.
 7) Executou-se os passos 1 a 4 novamente ("Launch instance"), no entanto no passo 1, escolheremos a image base recém criada e no passo 2, utilizaremos 4 instâncias ao invés de uma, além disso, adicionaremos um "placement group" para obter um melhor desempenho de rede.
 8) Criou-se um grupo de segurança com as seguintes regras, Type: All trafic; Protocol: ALL. Dessa maneira todas as portas entre as máquinas pertencentes a esse grupo estão liberadas, permitindo assim a comunicação entre elas.
-9) As 4 máquinas virtuais são acessadas na máquina local via SSH utilizando um terminal para cada instância. Uma dessa quatro instâncias será a master, onde será necessário obter o número do "Private IPv4 addresses" dela.
+9) As 4 máquinas virtuais são acessadas na máquina local via SSH utilizando um terminal para cada instância. Uma dessas quatro instâncias será a master, onde será necessário obter o seu número do "Private IPv4 addresses".
 10) Para cada terminal, executa-se o seguinte comando:
   Onde o parâmetro "--master_addr" deve ser igual ao número do "Private IPv4 addresses" da instância escolhida como master, no exemplo abaixo temos --master_addr="172.31.71.56".
   
