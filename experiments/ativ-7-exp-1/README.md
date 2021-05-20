@@ -72,7 +72,7 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 
 Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.large", "m5.large", "m4.large", "m4.xlarge", "t2.large". Onde, as configurações das máquinas são apresentadas na imagem abaixo.
 
-![Figura 8](./screeshots/maquinas_virtuais.png)
+![Figura 8](./screenshots/maquinas_virtuais.png)
 Figura 8. Detalhes das máquinas virtuais utilizadas nos experimentos.
 
 ![Figura 9](./results/cost_epoch.png)
