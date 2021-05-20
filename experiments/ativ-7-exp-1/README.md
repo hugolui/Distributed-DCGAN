@@ -74,3 +74,12 @@ Primeiramente, o objetivo deste experimento é entender o custo benefício da ex
 
 ![Figura 8](./results/cost_epoch.png)
 Figura 8. Custo de uma máquina para realização de uma "epoch".
+
+![Figura 9](./results/cost_1teration.png)
+Figura 9. Custo de uma máquina para realização de uma iteração.
+
+![Figura 10](./results/cost_2teration.png)
+Figura 10. Custo de uma máquina para realização de duas iterações.
+
+![Figura 11](./results/cost_2to11teration.png)
+Figura 10. Custo de uma máquina para realização de dez iterações.
