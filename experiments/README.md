@@ -3,7 +3,7 @@ Para realizar a execução da DCGAN no Amazon web service elastic computing 2 (A
 1) No serviço EC2, acessa-se a opção "Launch instance" e depois definiu-se a imagem como "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type".
 2) Escolheu-se a máquina virtual "m5.large" (2 CPUs e 8GB de RAM) com 1 instância.
 3) Definiu-se um storage com 16 GB do tipo "General Purpose SSD (gp2)".
-4) Configurou-se as regras de acesso a máquinas virtual da seguinte forma, Type: SSH; Protocol: TCP; Port range: 22; Source: anywhere. Desse modo, o usuário possui acesso as máquinas virtuais via SSH.
+4) Configurou-se as regras de acesso as máquinas virtuais da seguinte forma, Type: SSH; Protocol: TCP; Port range: 22; Source: anywhere. Desse modo, o usuário possui acesso as máquinas virtuais via SSH.
 5) Depois de criado a imagem, connectou-se a máquina virtual via SSH e executou-se os seguintes commandos:
   
 sudo apt-get update
