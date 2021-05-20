@@ -192,7 +192,7 @@ def main():
 
     # Write output file
     ip = os.uname()[1]
-    file = open("ip-" + ip + "-rank" + str(rank) +  ".out", "w") 
+    file = open(ip + "-rank" + str(rank) +  ".out", "w") 
     #file.write(parser.parse_args())
     file.write(f"{argv} \n")
     file.write(f"Using GPU: {argv.cuda} \n")
