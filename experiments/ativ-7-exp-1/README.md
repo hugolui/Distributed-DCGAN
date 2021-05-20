@@ -93,7 +93,7 @@ Tabela 1. Erro relativo para cálculo do custo de execução de uma época
 |Máquina virtual | Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
 |:---:  | :---:   | :-: | :-: |
 | m5.large | 301 | 301 | 283 |
-| c5.large | 301 | 301 | 283 |
+| c5.large |10.58297240108169| 301 | 283 |
 | m4.large | 301 | 301 | 283 |
 | t2.large | 301 | 301 | 283 |
 
