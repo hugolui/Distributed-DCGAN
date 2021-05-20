@@ -2,8 +2,9 @@
 
 ## 1) Escolhendo a imagem da máquina
 
-![Alt text](./screenshots/imagem.png)
+Escolheu-se a imagem "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type" como mostrado na figura abaixo.
 
+![Figura 1](./screenshots/imagem.png)
 
 
 ## 2) Escolhendo o tipo da instância
