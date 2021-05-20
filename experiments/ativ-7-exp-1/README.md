@@ -41,3 +41,9 @@ Definiu-se um storage com 16 GB do tipo "General Purpose SSD (gp2)", como mostra
 ![Figura 4](./screenshots/storage.png)
 
 ## 5) Configurando o grupo de segurança
+
+Configurou-se as regras de acesso as máquinas virtual como mostrado nas imagens abaixo. Para que ocorra comunicação entre as máquinas é necessária a criação de um "security group", que é configurado de acordo com as imagens abaixo.
+
+![Figura 5](./screenshots/security_group1.png)
+![Figura 6](./screenshots/security_group1.png)
+![Figura 7](./screenshots/security_group1.png)
