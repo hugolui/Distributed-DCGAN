@@ -34,8 +34,9 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 ![Figura 2](./screenshots/instancia1.png)
 Figura 2. Detalhes da configuração da instância, parte 1.
+
 ![Figura 3](./screenshots/instancia2.png)
-Figura 2. Detalhes da configuração da instância, parte 2.
+Figura 3. Detalhes da configuração da instância, parte 2.
 
 ## 4) Adicionando o dispostivo de armazenamento
 
