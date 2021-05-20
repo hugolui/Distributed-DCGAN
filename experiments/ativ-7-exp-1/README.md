@@ -89,9 +89,10 @@ Figura 12. Custo de uma máquina para realização de dez iterações.
 
 O custo de uma máquina virtual para diferentes cenários é apresentado nas Figs. 9 a 12, onde para cada máquina, realizou-se o experimento por uma época, uma iteração, duas iterações e dez iterações. Apesar de a máquina "c5.large" executar a aplicação em um menor tempo em comparação com as outras máquinas, observa-se, que em todos os cenários, a máquina "m5.large" tem o melhor custo-benefício. Além disso, nota-se que a ordem custo-benefício das máquinas é a mesma para todos os cenários. A partir dos resultados e das configurações das máquinas virtuais, pode-se inferir que a aplicação tem melhor performance com máquinas virtuais que oferecem maior velocidade de clock da CPU e performance de rede. Portanto, para obter o melhor custo-benefício, procura-se máquinas virtuais com tais características a um menor preço.
 
-| Attempt | #1  | #2  |
+Tabela 1. Custo de uma época baseado em diferente cenários
+| Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
 | :---:   | :-: | :-: |
-| Seconds | 301 | 283 |
+| 301 | 301 | 283 |
 
 Desse modo, na etapa de seleção e comparação de custo das máquinas, a aplicação poderia
 
