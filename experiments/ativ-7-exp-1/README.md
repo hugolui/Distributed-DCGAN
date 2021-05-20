@@ -91,7 +91,7 @@ O custo de uma máquina virtual para diferentes cenários é apresentado nas Fig
 
 Tabela 1. Erro relativo para cálculo do custo de execução de uma época
 |a  | Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
-|a  | :---:   | :-: | :-: |
+|:---:  | :---:   | :-: | :-: |
 | a | 301 | 301 | 283 |
 
 Desse modo, na etapa de seleção e comparação de custo das máquinas, a aplicação poderia
