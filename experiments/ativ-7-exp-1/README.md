@@ -43,14 +43,20 @@ Figura 3. Detalhes da configuração da instância, parte 2.
 Definiu-se um storage com 16 GB do tipo "General Purpose SSD (gp2)", como mostrado na imagem abaixo.
 
 ![Figura 4](./screenshots/storage.png)
+Figura 4. Configuração do storage utilizado nos experimentos.
 
 ## 5) Configurando o grupo de segurança
 
 Configurou-se as regras de acesso as máquinas virtuais como mostrado nas imagens abaixo. Para que ocorra comunicação entre as máquinas é necessária a criação de um "security group", que é configurado de acordo com as imagens abaixo.
 
 ![Figura 5](./screenshots/security_group1.png)
+Figura 5. Configuração do grupo de segurança usado nos experimentos.
+
 ![Figura 6](./screenshots/security_group2.png)
+Figura 6. Detalhes das regras de entrada do grupo de segurança.
+
 ![Figura 7](./screenshots/security_group3.png)
+Figura 7. Detalhes das regras de saída do grupo de segurança.
 
 ## 6) Acesso as máquinas virtuais e execução da aplicação
 
@@ -67,4 +73,4 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional.
 
 ![Figura 8](./results/cost_epoch.png)
-Figura 8. CASSSA
+Figura 8. Custo de uma máquina para realização de uma "epoch".
