@@ -1,4 +1,4 @@
-Para realizar a executação da DCGAN no Amazon web service elastic computing 2 (AWS EC2) foi realizado os seguintes passos:
+Para realizar a execução da DCGAN no Amazon web service elastic computing 2 (AWS EC2) foi realizado os seguintes passos:
 
 1) No serviço EC2, acessa-se a opção "Launch instance" e depois definiu-se a imagem como "Ubuntu Server 20.04 LTS (HVM), SSD Volume Type".
 2) Escolheu-se a máquina virtual "m5.large" (2 CPUs e 8GB de RAM) com 1 instância.
