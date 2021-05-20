@@ -9,7 +9,7 @@ Figura 1. Imagem utilizada nos experimentos.
 
 ## 2) Escolhendo o tipo da instância
 
-No experimento foram usadas as intâncias: "c5.large", "m5.large", "m4.large", "t2.large"
+No experimento foram usadas as intâncias: "c5.xlarge", "m5.large", "m4.large", "t2.large"
 
 ## 3) Configurar detalhes da instância
 
@@ -70,7 +70,7 @@ Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o mas
 
 # Resultados
 
-Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.large", "m5.large", "m4.large", "t2.large". Onde, suas configurações são apresentadas na imagem abaixo. 
+Primeiramente, o objetivo deste experimento é entender o custo benefício da execução de uma aplicação paralela na nuvem computacional. Desse modo, executou-se a aplicação DCGAN em tipos de máquinas virtuais diferentes. Escolheu-se as seguintes máquinas: "c5.xlarge", "m5.large", "m4.large", "t2.large". Onde, suas configurações são apresentadas na imagem abaixo. 
 
 ![Figura 8](./screenshots/maquinas_virtuais.png)
 Figura 8. Detalhes das máquinas virtuais utilizadas nos experimentos.
@@ -92,10 +92,10 @@ O custo de uma máquina virtual para diferentes cenários é apresentado nas Fig
 Tabela 1. Erro relativo para cálculo do custo de execução de uma época
 |Máquina virtual | Primeira iteração  | Segunda iteração  | Média das segunda a décima primeira iteração |
 |:---:  | :---:   | :-: | :-: |
-| m5.large | 301 | 301 | 283 |
-| c5.large |10.58297240108169| 301 | 283 |
-| m4.large | 301 | 301 | 283 |
-| t2.large | 301 | 301 | 283 |
+| m5.large | 10.96 % | 4.13 % | 0.61 % |
+| c5.large |10.58 %| 2.57 % | 0.36 % |
+| m4.large |9.19 %| 1.76 % | 0.01 % |
+| t2.large |7.09 % | 0.18 % | 0.05 |
 
 Desse modo, na etapa de seleção e comparação de custo das máquinas, a aplicação poderia
 
