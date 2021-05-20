@@ -28,6 +28,7 @@ echo \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+<addr>
 
 ![Figura 2](./screenshots/instancia1.png)
 ![Figura 3](./screenshots/instancia2.png)
