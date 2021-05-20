@@ -115,6 +115,10 @@ def weights_init(m):
         torch.nn.init.zeros_(m.bias)
 
 def main():
+
+    # Initialize start time
+    initialize_start_time = time.time() 
+
     # Each process runs on 1 GPU device specified by the local_rank argument.
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('--dataset', required=True, choices=['cifar10', 'lsun', 'mnist', \
@@ -182,13 +186,28 @@ def main():
     real_label = 1
     fake_label = 0
 
+    # Initialize Final time
+    initialize_final_time = time.time() - initialize_start_time
+    print(f"Rank: {rank}, Initialize time: {initialize_final_time:.4f} s")
+
+    # Write output file
+    ip = os.uname()[1]
+    file = open(ip + "-rank" + str(rank) +  ".out", "w") 
+    #file.write(parser.parse_args())
+    file.write(f"{argv} \n")
+    file.write(f"Using GPU: {argv.cuda} \n")
+    file.write(f"Rank: {rank}. World Size: {world_size} \n")
+    file.write(f"Rank: {rank}, Initialize time: {initialize_final_time:.4f} s \n")
+    
     # Lets start all together. Optimizers all have barrier also
     torch.distributed.barrier()
 
     for epoch in range(argv.num_epochs):
         epoch_start_time = time.time()
         print(f"Rank: {rank}, Epoch: {epoch}, Training ...")
+        file.write(f"Rank: {rank}, Epoch: {epoch}, Training ... \n")
         for i, data in enumerate(train_loader):
+
             iteration_start_time = time.time()
             ############################
             # (1) Update D network: maximize log(D(x)) + log(1 - D(G(z)))
@@ -231,9 +250,16 @@ def main():
 
             iteration_end_time = time.time()-iteration_start_time
             print(f"[epoch: {epoch}/{argv.num_epochs}][iteration: {i}/{len(train_loader)}][rank: {rank}] " \
-                  f"Loss_D: {errD.item():.4f}, Loss_G: {errG.item():.4f}, " \
-                  f"D(x): {D_x:.4f}, D(G(z)): {D_G_z1:.4f} / {D_G_z2:.4f}, " \
-                  f"iteration time: {iteration_end_time:.4f}s")
+                f"Loss_D: {errD.item():.4f}, Loss_G: {errG.item():.4f}, " \
+                f"D(x): {D_x:.4f}, D(G(z)): {D_G_z1:.4f} / {D_G_z2:.4f}, " \
+                f"iteration time: {iteration_end_time:.4f}s")
+            file.write(f"[epoch: {epoch}/{argv.num_epochs}][iteration: {i}/{len(train_loader)}][rank: {rank}] " \
+                f"Loss_D: {errD.item():.4f}, Loss_G: {errG.item():.4f}, " \
+                f"D(x): {D_x:.4f}, D(G(z)): {D_G_z1:.4f} / {D_G_z2:.4f}, " \
+                f"iteration time: {iteration_end_time:.4f}s \n")
+
+            print(f"Rank: {rank}, Epoch: {epoch}, iteration: {i}/{len(train_loader)}, It. time: {iteration_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s")
+            file.write(f"Rank: {rank}, Epoch: {epoch}, iteration: {i}/{len(train_loader)}, It. time: {iteration_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s \n")
 
             if i%100 == 0:
                 vutils.save_image(real_cpu, f'{argv.out_folder}/real_samples_rank_{rank}_epoch_{epoch}_iter_{i}.png', normalize=True)
@@ -241,9 +267,18 @@ def main():
                 vutils.save_image(fake.detach(), f'{argv.out_folder}/fake_samples_rank_{rank}_epoch_{epoch}_iter_{i}.png', normalize=True)
                 torch.distributed.barrier()
 
-        epoch_end_time = time.time()-epoch_start_time
-        print(f"[rank: {rank}] Epoch {epoch} took: {epoch_end_time:.4f} seconds")
+            # Stop after 20th iteration
+            if i > 19:
+                break
 
+        epoch_end_time = time.time()-epoch_start_time
+        print(f"[Rank: {rank}] Epoch {epoch} took: {epoch_end_time:.4f} seconds")
+        file.write(f"[Rank: {rank}] Epoch {epoch} took: {epoch_end_time:.4f} seconds \n")
+
+        print(f"Rank: {rank}, Epoch: {epoch}, Epoch time: {epoch_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s")
+        file.write(f"Rank: {rank}, Epoch: {epoch}, Epoch time: {epoch_end_time:.4f}s, Elapsed time: {time.time() - initialize_start_time:.4f} s")
+        
+    file.close()
     torch.distributed.destroy_process_group()
 
 if __name__ == "__main__":
