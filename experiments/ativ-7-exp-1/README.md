@@ -56,6 +56,6 @@ Para cada experimento, as 4 máquinas virtuais são acessadas na máquina local 
 sudo docker run --env OMP_NUM_THREADS=1 --rm --network=host -p 1234:1234 -v=$(pwd):/root dist_dcgan:latest python -m torch.distributed.launch --nproc_per_node=1 --nnodes=4 --node_rank=0 --master_addr="ip_master" --master_port=1234 dist_dcgan.py --dataset cifar10 --dataroot ./cifar10 --num_epochs 1 --batch_size 32 --max_workers 1
 ```
 
-Onde, altera-se o número do "--node_rank" para em terminal, lembrando que a máquina mestre tem rank igual a zero. No parâmetro "--master_add" deve ser inserido o "Private IPv4 addresses" da máquina mestre.
+Onde, altera-se o número do "--node_rank" para em terminal, lembrando que o master tem rank igual a zero. No parâmetro "--master_add" deve ser inserido o "Private IPv4 addresses" do master.
 
 
