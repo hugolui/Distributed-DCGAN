@@ -1,6 +1,6 @@
 # Passos necessários para execução do experimento
 
-O objetivo deste experimento é entender o processo de automação de provisionamento e configuração de aplicações na nuvem utilizando as ferramentas ANSIBLE e CLAP.
+O objetivo deste experimento é entender o processo de automação de provisionamento e configuração de aplicações na nuvem utilizando as ferramentas Ansible (https://www.ansible.com) e CLAP (https://clap.readthedocs.io/en/latest/index.html).
 
 ## 1) Configuração do provedor na nuvem
 
