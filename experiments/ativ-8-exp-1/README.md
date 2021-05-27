@@ -6,7 +6,7 @@ O objetivo deste experimento é entender o processo de automação de provisiona
 
 No arquivo "./clap/configs/providers.yaml" é definido o provedor, as chaves de acesso e a região. A configuração utilizada nesse experimento é apresentada abaixo. 
 
-![Figura 1](./screenshots/provedor.png)
+![Figura 1](./screenshots/provider.png)
 Figura 1. Configuração do provedor na nuvem utilizada nos experimentos.
 
 ## 2) Configuração de login
