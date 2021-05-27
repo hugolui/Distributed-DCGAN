@@ -33,7 +33,7 @@ Três configurações de cluster foram utilizadas nos experimentos. As configura
 * Duas máquinas t2.small (cluster-t2_small-2x.yml)
 * Quatro máquinas t2.small (cluster-t2_small-4x.yml)
 
-A estrutura do arquivo cluster-t2_small-xx.yml é ilustrada abaixo.
+A estrutura do arquivo cluster-t2_small-xx.yml é ilustrada abaixo. Para mudar o número de máquinas no cluster é necessário modificar o parâmetro "args" da ação dentro da configuração "setup-run", onde esse número indica o quantidade de máquinas a serem criadas. Além disso, é necessário modificar o parâmetro "count" dos "slave-nodes" dentro da opção "node", onde essse número indica a quantidade de "slave nodes" (número de máquinas - 1). Nota-se também que é preciso ter atenção ao caminho dos diretórios presentes nas configurações: "setup-get-ip", "setup-send-ip", "setup-fetch" e "setup-fetch-png".
 
 ```
 setups:
