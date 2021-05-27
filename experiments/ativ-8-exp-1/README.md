@@ -162,4 +162,5 @@ clusters:
         - setup-ip-slave
         - setup-get-ip
 ```
+Os arquivos de script e python necessários para executar os experimentos estão presentes na pasta "/clap/roles/roles/files/".
 
