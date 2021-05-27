@@ -201,4 +201,6 @@ clapp cluster start t2_small_4x
 
 ## 7) Resultados
 
+![Figura 4](./screenshots/mean_iteration.png)
 
+Figura 4. Tempo de iteração para cada tipo de cluster.
