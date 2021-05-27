@@ -2,7 +2,11 @@
 
 O objetivo deste experimento é entender o processo de automação de provisionamento e configuração de aplicações na nuvem utilizando as ferramentas Ansible (https://www.ansible.com) e CLAP (https://clap.readthedocs.io/en/latest/index.html).
 
-## 1) Configuração do provedor na nuvem
+## 1) Instalação das ferramentas
+
+Os passos para instalação do CLAP e Ansible são detalhados em https://clap.readthedocs.io/en/latest/introduction.html.
+
+## 2) Configuração do provedor na nuvem
 
 No arquivo "./clap/configs/providers.yaml" é definido o provedor, as chaves de acesso e a região. A configuração utilizada nesse experimento é apresentada abaixo. 
 
@@ -10,7 +14,7 @@ No arquivo "./clap/configs/providers.yaml" é definido o provedor, as chaves de 
 
 Figura 1. Configuração do provedor na nuvem utilizada nos experimentos.
 
-## 2) Configuração de login
+## 3) Configuração de login
 
 No arquivo "./clap/configs/logins.yaml" é definido as informações necessárias para o acesso das máquinas virtuais via SSH. A configuração utilizada nesse experimento é apresentada abaixo.
 
@@ -18,7 +22,7 @@ No arquivo "./clap/configs/logins.yaml" é definido as informações necessária
 
 Figura 2. Configuração de login utilizada nos experimentos.
 
-## 3) Configuração de template das instâncias
+## 4) Configuração de template das instâncias
 
 No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a máquina virtual, como tipo de instância, tipo da imagem, tamanho do disco, grupo de segurança e entre outros.  
 
@@ -26,7 +30,7 @@ No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a 
 
 Figura 3. Configuração de template das instâncias.
 
-## 4) Configuração do cluster
+## 5) Configuração do cluster
 
 Três configurações de cluster foram utilizadas nos experimentos. As configurações de cada cluster estão presentes na pasta "/clap/configs/clusters/".
 * Uma máquina t2.small (cluster-t2_small-1x.yml)
@@ -162,5 +166,11 @@ clusters:
         - setup-ip-slave
         - setup-get-ip
 ```
-Os arquivos de script e python necessários para executar os experimentos estão presentes na pasta "/clap/roles/roles/files/".
+Os arquivos de script e python necessários para executar os experimentos estão presentes na pasta "/clap/roles/roles/files/". Para os experimentos, utilizou-se a aplicação DCGAN (https://github.com/hugolui/Distributed-DCGAN).
 
+## 6) Criação do cluster
+
+Primeiramente, para o uso do Clap é necessário ativar o ambiente virtual. Dentro do diretório "clap", obtido pelo github, utiliza-se o seguinte comando: 
+```
+source clap-env/bin/activate
+```
