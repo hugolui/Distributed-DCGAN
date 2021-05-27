@@ -72,7 +72,7 @@ setups:
       action: fetch
       extra:
         src: ~/172*
-        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+        dest: ~/Desktop/MO833/atividade8/t2_small_4x/
 
   ### Send all ip numbers and ip code to nodes ###      
   setup-send-ip:
@@ -83,7 +83,7 @@ setups:
     - role: gan
       action: copy
       extra:
-        src: ~/Desktop/MO833/atividade8/t2_small_3x/
+        src: ~/Desktop/MO833/atividade8/t2_small_4x/
         dest: ~/
 
   ### Install Docker and DCGAN ###
@@ -108,7 +108,7 @@ setups:
       action: run-script
       extra:
         src: run.sh
-        args: "3" # Total number of nodes (master + slaves)
+        args: "4" # Total number of nodes (master + slaves)
 
   ### Download output files from remote to local###
   setup-fetch:
@@ -120,7 +120,7 @@ setups:
       action: fetch
       extra:
         src: ~/Distributed-DCGAN/ip-*
-        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+        dest: ~/Desktop/MO833/atividade8/t2_small_4x/
 
   setup-fetch-png:
     roles:
@@ -131,10 +131,10 @@ setups:
       action: fetch
       extra:
         src: ~/Distributed-DCGAN/*.png
-        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+        dest: ~/Desktop/MO833/atividade8/t2_small_4x/
 
 
-### Cluster 4x t2.small ###
+### Cluster t2.small ###
 clusters:
   t2_small:
 
@@ -156,7 +156,7 @@ clusters:
 
       slave-nodes:
         type: t2_small-ubuntu20-16gb-mpi_group  
-        count: 2  # Number of slave nodes
+        count: 3  # Number of slave nodes
         min_count: 0
         setups:                      
         - setup-ip-slave
