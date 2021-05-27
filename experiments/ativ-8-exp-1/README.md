@@ -174,3 +174,9 @@ Primeiramente, para o uso do Clap é necessário ativar o ambiente virtual. Dent
 ```
 source clap-env/bin/activate
 ```
+
+Após esse passo, a criação do cluster é realizada a partir do seguinte comando:
+* Para um cluster com uma máquina
+```
+clapp cluster start t2_small_2x             
+```
