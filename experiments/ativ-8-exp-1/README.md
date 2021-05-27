@@ -1,6 +1,6 @@
 # Passos necessários para execução do experimento
 
-O objetivo deste experimento é entender o processo de automação de provisionamento e configuração de aplicações na nuvem utilizando as ferramentas Ansible (https://www.ansible.com) e CLAP (https://clap.readthedocs.io/en/latest/index.html).
+O objetivo deste experimento é entender o processo de automação de provisionamento e configuração de aplicações na nuvem utilizando as ferramentas Ansible (https://www.ansible.com) e CLAP (https://clap.readthedocs.io/en/latest/index.html). Para os experimentos, utilizou-se a aplicação DCGAN (https://github.com/hugolui/Distributed-DCGAN).
 
 ## 1) Instalação das ferramentas
 
@@ -166,7 +166,16 @@ clusters:
         - setup-ip-slave
         - setup-get-ip
 ```
-Os arquivos de script e python necessários para executar os experimentos estão presentes na pasta "/clap/roles/roles/files/". Para os experimentos, utilizou-se a aplicação DCGAN (https://github.com/hugolui/Distributed-DCGAN).
+Resumidamente, neste arquivo de configuração é definido:
+* Número de máquinas do cluster ("master" e "slaves")
+* Obtenção do IP de cada máquina virtual
+* Download do IP de cada máquina virtual
+* Distribuição de todos os IPs para cada máquinas virtual, além do código que rotula cada máquina virtual com um "rank", que é utilizado no comando para rodar a aplicação.
+* Download e instalação da aplicação e dos pacotes em cada máquina virtual
+* Execução da aplicação em paralelo
+* Download dos arquivos de saida presente em cada máquina virtual para a máquina local.
+
+Os arquivos de script e python necessários para executar os experimentos estão presentes na pasta "/clap/roles/roles/files/". 
 
 ## 6) Criação do cluster
 
@@ -178,5 +187,15 @@ source clap-env/bin/activate
 Após esse passo, a criação do cluster é realizada a partir do seguinte comando:
 * Para um cluster com uma máquina
 ```
+clapp cluster start t2_small_1x             
+```
+* Para um cluster com duas máquinas
+```
 clapp cluster start t2_small_2x             
 ```
+
+* Para um cluster com quatros máquinas
+```
+clapp cluster start t2_small_4x             
+```
+
