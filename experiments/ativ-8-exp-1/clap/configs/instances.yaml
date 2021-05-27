@@ -1,0 +1,31 @@
+type-a:
+    provider: aws-config-us-east-1
+    login: login-ubuntu
+    flavor: t2.micro
+    image_id: ami-07d0cf3af28718ef8
+    security_group: otavio-sg
+
+type-b:
+    provider: aws-config-us-east-1
+    login: login-ubuntu
+    flavor: t2.medium
+    image_id: ami-07d0cf3af28718ef8
+    boot_disk_size: 16
+    security_group: otavio-sg
+
+test:
+    provider: hugo-config
+    login: hugo-login
+    flavor: t2.small
+    image_id: ami-09e67e426f25ce0d7
+    boot_disk_size: 16
+    security_group: mpi-group-hugo
+
+t2_small-ubuntu20-16gb-mpi_group:
+    provider: hugo-config
+    login: hugo-login
+    flavor: t2.small
+    image_id: ami-09e67e426f25ce0d7
+    boot_disk_size: 16
+    placement_group: hugo_group
+    security_group: mpi-group-hugo

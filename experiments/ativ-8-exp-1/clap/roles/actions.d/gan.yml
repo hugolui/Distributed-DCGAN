@@ -1,0 +1,42 @@
+
+---
+actions:
+
+  copy:
+    playbook: roles/commands-common_copy.yml
+    description: Copy files from localhost to remote hosts
+    vars:
+    - name: src
+      description: Source files/directory to be copied
+    - name: dest
+      description: Destination directory where files will be placed
+
+  run-script:
+    playbook: roles/commands-common_run-script.yml
+    description: Transfer and run a script at remote hosts
+    vars:
+    - name: src
+      description: Source script to run
+    - name: args
+      description: Arguments to be passed to the script
+    - name: workdir
+      description: Working directory. It will be changed before executing the script
+      optional: yes
+
+  run-command: 
+    playbook: roles/commands-common_run-command.yml
+    description: Run a shell command in remote hosts
+    vars:
+    - name: cmd
+    - name: workdir
+      description: Working directory. It will be changed before executing the command
+      optional: yes
+
+  fetch:
+    playbook: roles/commands-common_fetch.yml
+    description: Fetch files from remote hosts to localhosts
+    vars:
+    - name: src
+      description: Source files/directory to be fetched
+    - name: dest
+      description: Destination directory where files will be placed

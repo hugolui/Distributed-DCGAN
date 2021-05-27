@@ -1,0 +1,130 @@
+setups:
+
+  ### Get master ip number ###
+  setup-ip-master:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: run-script
+      extra:
+        src: ip_master.sh
+        args: "0"
+
+  ### Get slave ip numbers ####
+  setup-ip-slave:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: run-script
+      extra:
+        src: ip_slave.sh
+        args: "0"
+
+  ### Download each IP number from remote machines ###      
+  setup-get-ip:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: fetch
+      extra:
+        src: ~/172*
+        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+
+  ### Send all ip numbers and ip code to nodes ###      
+  setup-send-ip:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: copy
+      extra:
+        src: ~/Desktop/MO833/atividade8/t2_small_3x/
+        dest: ~/
+
+  ### Install Docker and DCGAN ###
+  setup-gan:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: run-script
+      extra:
+        src: setup.sh
+        args: "0"
+
+  ### Run DCGAN on all nodes ####      
+  setup-run:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: run-script
+      extra:
+        src: run.sh
+        args: "3" # Total number of nodes (master + slaves)
+
+  ### Download output files from remote to local###
+  setup-fetch:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: fetch
+      extra:
+        src: ~/Distributed-DCGAN/ip-*
+        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+
+  setup-fetch-png:
+    roles:
+    - name: gan
+
+    actions:
+    - role: gan
+      action: fetch
+      extra:
+        src: ~/Distributed-DCGAN/*.png
+        dest: ~/Desktop/MO833/atividade8/t2_small_3x/
+
+
+### Cluster 4x t2.small ###
+clusters:
+  t2_small:
+
+    # These setups are executed at all cluster's nodes, after setups at nodes section
+    after_all:
+    - setup-send-ip
+    - setup-gan
+    - setup-run
+    - setup-fetch
+    - setup-fetch-png
+
+    nodes:
+      master-node:
+        type: t2_small-ubuntu20-16gb-mpi_group
+        count: 1 # Number of master nodes
+        setups:
+        - setup-ip-master
+        - setup-get-ip
+
+      slave-nodes:
+        type: t2_small-ubuntu20-16gb-mpi_group  
+        count: 2  # Number of slave nodes
+        min_count: 0
+        setups:                      
+        - setup-ip-slave
+        - setup-get-ip
+
+        
+    
+  
+

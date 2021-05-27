@@ -1,0 +1,49 @@
+Namespace(batch_size=32, beta1=0.5, cuda=False, dataroot='./cifar10', dataset='cifar10', image_size=64, learning_rate=0.0002, local_rank=0, max_workers=4, ndf=64, ngf=64, num_epochs=1, nz=100, out_folder='.', seed=0) 
+Using GPU: False 
+Rank: 0. World Size: 4 
+Rank: 0, Initialize time: 5.3786 s 
+Rank: 0, Epoch: 0, Training ... 
+[epoch: 0/1][iteration: 0/391][rank: 0] Loss_D: 1.4350, Loss_G: 4.2139, D(x): 0.5977, D(G(z)): 0.5917 / 0.0155, iteration time: 3.5573s 
+Rank: 0, Epoch: 0, iteration: 0/391, It. time: 3.5573s, Elapsed time: 9.2468 s 
+[epoch: 0/1][iteration: 1/391][rank: 0] Loss_D: 0.9315, Loss_G: 3.4009, D(x): 0.5895, D(G(z)): 0.3035 / 0.0344, iteration time: 2.4202s 
+Rank: 0, Epoch: 0, iteration: 1/391, It. time: 2.4202s, Elapsed time: 12.0895 s 
+[epoch: 0/1][iteration: 2/391][rank: 0] Loss_D: 0.8028, Loss_G: 4.2995, D(x): 0.7338, D(G(z)): 0.3664 / 0.0139, iteration time: 2.3863s 
+Rank: 0, Epoch: 0, iteration: 2/391, It. time: 2.3863s, Elapsed time: 14.4808 s 
+[epoch: 0/1][iteration: 3/391][rank: 0] Loss_D: 0.6090, Loss_G: 4.7887, D(x): 0.7879, D(G(z)): 0.2765 / 0.0087, iteration time: 2.3822s 
+Rank: 0, Epoch: 0, iteration: 3/391, It. time: 2.3822s, Elapsed time: 16.8680 s 
+[epoch: 0/1][iteration: 4/391][rank: 0] Loss_D: 0.5462, Loss_G: 5.1987, D(x): 0.7954, D(G(z)): 0.2540 / 0.0058, iteration time: 2.6878s 
+Rank: 0, Epoch: 0, iteration: 4/391, It. time: 2.6878s, Elapsed time: 19.5649 s 
+[epoch: 0/1][iteration: 5/391][rank: 0] Loss_D: 0.6229, Loss_G: 6.1039, D(x): 0.7735, D(G(z)): 0.2834 / 0.0023, iteration time: 2.4394s 
+Rank: 0, Epoch: 0, iteration: 5/391, It. time: 2.4394s, Elapsed time: 22.0127 s 
+[epoch: 0/1][iteration: 6/391][rank: 0] Loss_D: 0.4117, Loss_G: 6.3877, D(x): 0.8392, D(G(z)): 0.1946 / 0.0019, iteration time: 2.4169s 
+Rank: 0, Epoch: 0, iteration: 6/391, It. time: 2.4169s, Elapsed time: 24.4342 s 
+[epoch: 0/1][iteration: 7/391][rank: 0] Loss_D: 0.5165, Loss_G: 7.2379, D(x): 0.8176, D(G(z)): 0.2476 / 0.0008, iteration time: 2.3866s 
+Rank: 0, Epoch: 0, iteration: 7/391, It. time: 2.3866s, Elapsed time: 26.8279 s 
+[epoch: 0/1][iteration: 8/391][rank: 0] Loss_D: 0.5753, Loss_G: 6.9587, D(x): 0.7342, D(G(z)): 0.1371 / 0.0010, iteration time: 2.3790s 
+Rank: 0, Epoch: 0, iteration: 8/391, It. time: 2.3790s, Elapsed time: 29.2137 s 
+[epoch: 0/1][iteration: 9/391][rank: 0] Loss_D: 0.5328, Loss_G: 9.2536, D(x): 0.8894, D(G(z)): 0.2958 / 0.0001, iteration time: 2.3972s 
+Rank: 0, Epoch: 0, iteration: 9/391, It. time: 2.3972s, Elapsed time: 31.6170 s 
+[epoch: 0/1][iteration: 10/391][rank: 0] Loss_D: 0.3717, Loss_G: 7.0917, D(x): 0.7789, D(G(z)): 0.0169 / 0.0010, iteration time: 2.3560s 
+Rank: 0, Epoch: 0, iteration: 10/391, It. time: 2.3560s, Elapsed time: 33.9813 s 
+[epoch: 0/1][iteration: 11/391][rank: 0] Loss_D: 0.6619, Loss_G: 10.6897, D(x): 0.9345, D(G(z)): 0.4371 / 0.0000, iteration time: 2.4067s 
+Rank: 0, Epoch: 0, iteration: 11/391, It. time: 2.4067s, Elapsed time: 36.3946 s 
+[epoch: 0/1][iteration: 12/391][rank: 0] Loss_D: 0.1974, Loss_G: 9.1503, D(x): 0.8417, D(G(z)): 0.0049 / 0.0001, iteration time: 2.6042s 
+Rank: 0, Epoch: 0, iteration: 12/391, It. time: 2.6042s, Elapsed time: 39.0056 s 
+[epoch: 0/1][iteration: 13/391][rank: 0] Loss_D: 0.3270, Loss_G: 9.2566, D(x): 0.9007, D(G(z)): 0.1893 / 0.0001, iteration time: 2.6354s 
+Rank: 0, Epoch: 0, iteration: 13/391, It. time: 2.6354s, Elapsed time: 41.6487 s 
+[epoch: 0/1][iteration: 14/391][rank: 0] Loss_D: 0.1876, Loss_G: 8.6774, D(x): 0.8967, D(G(z)): 0.0662 / 0.0002, iteration time: 2.4377s 
+Rank: 0, Epoch: 0, iteration: 14/391, It. time: 2.4377s, Elapsed time: 44.0950 s 
+[epoch: 0/1][iteration: 15/391][rank: 0] Loss_D: 0.3863, Loss_G: 11.8323, D(x): 0.9251, D(G(z)): 0.2424 / 0.0000, iteration time: 2.3985s 
+Rank: 0, Epoch: 0, iteration: 15/391, It. time: 2.3985s, Elapsed time: 46.4998 s 
+[epoch: 0/1][iteration: 16/391][rank: 0] Loss_D: 0.1677, Loss_G: 10.4229, D(x): 0.8633, D(G(z)): 0.0010 / 0.0000, iteration time: 2.3905s 
+Rank: 0, Epoch: 0, iteration: 16/391, It. time: 2.3905s, Elapsed time: 48.8959 s 
+[epoch: 0/1][iteration: 17/391][rank: 0] Loss_D: 0.1403, Loss_G: 6.3390, D(x): 0.9048, D(G(z)): 0.0239 / 0.0020, iteration time: 2.4734s 
+Rank: 0, Epoch: 0, iteration: 17/391, It. time: 2.4734s, Elapsed time: 51.3787 s 
+[epoch: 0/1][iteration: 18/391][rank: 0] Loss_D: 2.1865, Loss_G: 14.3206, D(x): 0.9603, D(G(z)): 0.8701 / 0.0000, iteration time: 2.4030s 
+Rank: 0, Epoch: 0, iteration: 18/391, It. time: 2.4030s, Elapsed time: 53.7883 s 
+[epoch: 0/1][iteration: 19/391][rank: 0] Loss_D: 0.3525, Loss_G: 15.0806, D(x): 0.7512, D(G(z)): 0.0000 / 0.0000, iteration time: 2.4268s 
+Rank: 0, Epoch: 0, iteration: 19/391, It. time: 2.4268s, Elapsed time: 56.2206 s 
+[epoch: 0/1][iteration: 20/391][rank: 0] Loss_D: 0.1948, Loss_G: 14.2349, D(x): 0.8497, D(G(z)): 0.0000 / 0.0000, iteration time: 2.3754s 
+Rank: 0, Epoch: 0, iteration: 20/391, It. time: 2.3754s, Elapsed time: 58.6018 s 
+[Rank: 0] Epoch 0 took: 53.1506 seconds 
+Rank: 0, Epoch: 0, Epoch time: 53.1506s, Elapsed time: 58.6301 s
