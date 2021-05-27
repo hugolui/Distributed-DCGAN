@@ -24,7 +24,7 @@ Figura 2. Configuração de login utilizada nos experimentos.
 
 ## 4) Configuração de template das instâncias
 
-No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a máquina virtual, como tipo de instância, tipo da imagem, tamanho do disco, grupo de segurança e entre outros.  
+No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a máquina virtual, como tipo de instância, tipo da imagem, tamanho do disco, grupo de segurança e entre outros. Detalhes sobre a criação do "security group" podem ser obtidos em (https://github.com/hugolui/Distributed-DCGAN/blob/ativ-7-exp-1/experiments/ativ-7-exp-1/README.md), na seção 5.
 
 ![Figura 3](./screenshots/instance.png)
 
@@ -198,4 +198,7 @@ clapp cluster start t2_small_2x
 ```
 clapp cluster start t2_small_4x             
 ```
+
+## 7) Resultados
+
 
