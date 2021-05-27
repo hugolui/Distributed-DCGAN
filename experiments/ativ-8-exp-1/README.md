@@ -28,6 +28,8 @@ Figura 3. Configuração de template das instâncias.
 
 ## 4) Configuração do cluster
 
-Três configurações de cluster foram utilizadas nos experimentos.
-* Item 1
+Três configurações de cluster foram utilizadas nos experimentos. As configurações de cada cluster estão presentes na pasta "/clap/configs/clusters/".
+* Uma máquina t2.small (cluster-t2_small-1x.yml)
+* Duas máquinas t2.small (cluster-t2_small-2x.yml)
+* Quatro máquinas t2.small (cluster-t2_small-4x.yml)
 
