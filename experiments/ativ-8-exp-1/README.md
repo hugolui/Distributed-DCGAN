@@ -204,3 +204,6 @@ clapp cluster start t2_small_4x
 ![Figura 4](./screenshots/mean_iteration.png)
 
 Figura 4. Tempo de iteração para cada tipo de cluster.
+
+O tempo de iteração médio para cada tipo de cluster é apresentado na Fig. 1. Observa-se que ao aumentar o número de máquinas do cluster, o tempo de iteração médio da aplicação sobe. Este resultado não era o esperado, provavelmente alguma problema de comunicação aconteceu entre as máquinas. De acordo com AWS, a máquina "t2.small" tem uma perfomance de rede de baixa a moderada, isso pode ser um explicação. Outra possível causa pode estar relacionada a configuração do "placemente group", neste experimentou utilizou-se a estratégia "spread".  
+
