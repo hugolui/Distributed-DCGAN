@@ -24,5 +24,5 @@ No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a 
 
 ![Figura 3](./screenshots/instance.png)
 
-Figura 3. Configuração de template das instâncias utilizada nos experimentos.
+Figura 3. Configuração de template das instâncias.
 
