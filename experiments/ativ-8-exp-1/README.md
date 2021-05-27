@@ -26,3 +26,8 @@ No arquivo "./clap/configs/instances.yaml" é definido as informações sobre a 
 
 Figura 3. Configuração de template das instâncias.
 
+## 4) Configuração do cluster
+
+Três configurações de cluster foram utilizadas nos experimentos.
+* Item 1
+
